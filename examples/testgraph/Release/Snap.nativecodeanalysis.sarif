@@ -1,0 +1,1095 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.30.30705.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX86\\x86\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x005EE1C0 -allChunksReserved -il C:\\Users\\Elssky\\AppData\\Local\\Temp\\_CL_2186bfdaast -typedil -f ..\\..\\snap-core\\Snap.cpp -Ze -D_MSC_EXTENSIONS -Zp8 -Gs -pc \\:/ -D_MSC_VER=1930 -D_MSC_FULL_VER=193030705 -D_MSC_BUILD=0 -D_WIN32 -D_M_IX86=600 -D_M_IX86_FP=2 -GR -D_CPPRTTI -nologo -W 3 -diagnostics:column -GF -Og -Ot -Oi -ltcg -DCODE_ANALYSIS -DWIN32 -DNDEBUG -D_CONSOLE -D_MBCS -EHs -D_CPPUNWIND -EHc -MD -D_MT -D_DLL -GS -D_M_FP_PRECISE -Zc:wchar_t -Zc:forScope -Yustdafx.h -FpRelease\\testgraph.pch -FoRelease\\Snap.obj -FdRelease\\vc143.pdb -external:W 3 -Gd -analyze:projectdirectory D:\\Snap-6.0\\examples\\testgraph -analyze:rulesetdirectory ;C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\MinimumRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I D:\\Snap-6.0\\glib-core -I D:\\Snap-6.0\\snap-core -I D:\\Snap-6.0\\snap-adv -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\atlmfc\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I D:\\Snap-6.0\\examples\\testgraph\\Include\\um -external:I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\include -external:I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\atlmfc\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\atlmfc\\include -external:I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -external:I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -external:I D:\\Snap-6.0\\examples\\testgraph\\Include\\um -I D:\\Snap-6.0\\examples\\testgraph\\Include\\um",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/examples/testgraph/testgraph.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "02c251c5777079b22e38d029f3a44811349f7fbe1643158a558d52d35f00e25b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/examples/testgraph/stdafx.h"
+          },
+          "hashes": {
+            "sha-256": "0e64545ef6cc7f6cd16129a93484aa8bf53384d463216e62f7725e0c74e2ba60"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/examples/testgraph/targetver.h"
+          },
+          "hashes": {
+            "sha-256": "bad5ca557eb99c1e3a43d3098fe0fef8def7228b724dcff3a72143f3717a8eb8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/snap.h"
+          },
+          "hashes": {
+            "sha-256": "b9b1958fe416fe66688bed7ce9a49eb3e3845d88ba23c2c29430536621d26e03"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/base.h"
+          },
+          "hashes": {
+            "sha-256": "71417d22eb3c3e0a88a3077d70ee4ee8164f94daa406ee515f320b8af3e48043"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/bd.h"
+          },
+          "hashes": {
+            "sha-256": "de6e420f511a04b11f8f836e95ad66874ac8f6942ec21445ae6699e3dcb5ae25"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/fl.h"
+          },
+          "hashes": {
+            "sha-256": "06ccd32c1fb47e62fd03ec422e36727930861b9c607508bf6a3e94b0c514f29a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/dt.h"
+          },
+          "hashes": {
+            "sha-256": "5dfc27b9fe1300aa67a6ac6ac441c77583e243e04900e97116ef3328a8fe7ff1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/ut.h"
+          },
+          "hashes": {
+            "sha-256": "27463f66360884f01d3393db92d63becf5e73109c8e851a421f25f23827f29b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/ds.h"
+          },
+          "hashes": {
+            "sha-256": "449acc3c62dd895a566e652306eb8f05e8112561011650770c97e91f96c96374"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/bits.h"
+          },
+          "hashes": {
+            "sha-256": "66b0decc32ef17ab36dc91a60a3564d6583d09cc902d873f1da728c3a21933bf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/hash.h"
+          },
+          "hashes": {
+            "sha-256": "5b3859bc46b224b84d32e12b30bf00b0e06e389c766b4a114e4a4f4ee9231125"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/hashmp.h"
+          },
+          "hashes": {
+            "sha-256": "43314d0a382e32c6aee5723835e4574e862d69aeac8dfcc571e9a6ae574462ea"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/xml.h"
+          },
+          "hashes": {
+            "sha-256": "058766c123a0f2ea084e17f1721be2253dc96fbe264cf05cf76eb3e9f2716a3d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/xmath.h"
+          },
+          "hashes": {
+            "sha-256": "42b5f9fa9c2399f2a4ed1b28be3f2ec908654966050273bd19402f00b35f221d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/xmlser.h"
+          },
+          "hashes": {
+            "sha-256": "3814b7b630ba4502787e20d17d41038a9c290308bd7b9acf11c002f551fa5df4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/unicode.h"
+          },
+          "hashes": {
+            "sha-256": "30dbad5713a374d755283f6fc7e960672f15ad4ae69517d501fdd6c762e0be63"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/unicodestring.h"
+          },
+          "hashes": {
+            "sha-256": "1fee44398f921bd81165645cfed0e87db3d699ab5f3695aa0b75626020dc98d5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/tm.h"
+          },
+          "hashes": {
+            "sha-256": "201a880d73cfe2e6424a547709473bc44e1603e87ba435374e8c6aa7a7453461"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/shash.h"
+          },
+          "hashes": {
+            "sha-256": "4aa5ededfbbd9ef26f4202ca8daf4372e195c5e880c61e84a36fd543c652f58f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/os.h"
+          },
+          "hashes": {
+            "sha-256": "e4d6c97d1219ed8d5a2283e62acd93598e3408533ef6869e43eedc36092d936f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/env.h"
+          },
+          "hashes": {
+            "sha-256": "b91ad580ecd404d06289cae2b1197590cb074ffaf0c0a1ad35fbcdee9a31f2c9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/wch.h"
+          },
+          "hashes": {
+            "sha-256": "f94b71912f59af9f02ebaf8b41aa5b9b4902b978dd978fea380adccd3287cc63"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/xfl.h"
+          },
+          "hashes": {
+            "sha-256": "c6549ee32522993721644934d41f36d7d19d7b465800fcc31743e38968d1ae38"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/blobbs.h"
+          },
+          "hashes": {
+            "sha-256": "f593a048cfde1c21673e39cb096104318749f901e4c392ca89473a89c172e6ae"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/lx.h"
+          },
+          "hashes": {
+            "sha-256": "27c07a5e3b7438e279303c8b4573a69dec53478718e156546953b0bec91d8bc5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/url.h"
+          },
+          "hashes": {
+            "sha-256": "91013afc58cf1e2dac4094da48f6510c2944e947f2f5a8901ee3b69e663ea553"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/http.h"
+          },
+          "hashes": {
+            "sha-256": "8dca7636d6aa0f5cf09b868a79a7bbe0becee473a4d54c9b249687f6b550f72f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/html.h"
+          },
+          "hashes": {
+            "sha-256": "7acc61047d6eef14fde8cc2fe6d6c539595ecb44a3c8d5b42c467b08d8a94bfa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/md5.h"
+          },
+          "hashes": {
+            "sha-256": "8975ff29f48bf8dda0a743dd594f3a2104a203bde7434f5a34bf3ddd0c84a3bc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/ss.h"
+          },
+          "hashes": {
+            "sha-256": "6dd465cc6ed19e2ec3cd38aab9450c6b3f0ea20546afda34a44cf7570b3286a3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/ssmp.h"
+          },
+          "hashes": {
+            "sha-256": "fe8ac314e704090b2564724fadf33d34dbf3f3175370a036511b49e0095ba608"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/json.h"
+          },
+          "hashes": {
+            "sha-256": "d2ee64b8d03ad380eddd4288522d3ec2d1c4f2fd7b33c52b4dbd27f23ed91c9d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/zipfl.h"
+          },
+          "hashes": {
+            "sha-256": "cf26468ce3ed9dd3c6e530cceb6586dc214ff2ea85ec1a141a1343f49b15905c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/gnuplot.h"
+          },
+          "hashes": {
+            "sha-256": "51d8c898ff34394bbf140b9449aa2eb6ad6643dc25aafebfd66034d12a86b630"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/linalg.h"
+          },
+          "hashes": {
+            "sha-256": "cd4fa8764e2fd44c087fdb9a5115f645c7fe8868e483e09826e81f66e5224852"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/gbase.h"
+          },
+          "hashes": {
+            "sha-256": "8290751a81d91d5f1e01cf7c5d298c20c2b6230e9e26b86c7f8d014b43ac8f38"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/util.h"
+          },
+          "hashes": {
+            "sha-256": "81925887bba350fac5c096e3faaac0fc92582c7ecc52084239a2b83474523970"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/attr.h"
+          },
+          "hashes": {
+            "sha-256": "cce44cdb55630b71051981eddf3d957680273abc74b2b754a40b4648667a44cf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/graph.h"
+          },
+          "hashes": {
+            "sha-256": "237fbc391ddd95479d761160f20a02e50822f76fdd79d10a5d4de67efd52d631"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/graphmp.h"
+          },
+          "hashes": {
+            "sha-256": "94fdba3bac798e11f3e513102c2352324634b82ee308c3f2eb76581b843765f3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/network.h"
+          },
+          "hashes": {
+            "sha-256": "3109dc634d3c662f9a7dc2b85c88d3a89889507e311de2153e17a878a65b56a0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/networkmp.h"
+          },
+          "hashes": {
+            "sha-256": "902ba1fed064a9dc295e030cfee357d1c5899de32d56218043472dc1132d46b8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/bignet.h"
+          },
+          "hashes": {
+            "sha-256": "ff957944c3cf82c46f9ba184fb6ee9737169d25a7d8b03945e8bd55b7441c462"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/timenet.h"
+          },
+          "hashes": {
+            "sha-256": "c062687595f9631aa2638fca5f089672d3146f7fe74047f816f572dca6955cbf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/mmnet.h"
+          },
+          "hashes": {
+            "sha-256": "6dd2764c7b912dfec7ba589711ea521e83faac52118bd06602d2e60b3cc08406"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/table.h"
+          },
+          "hashes": {
+            "sha-256": "b27c45ad82aeb1e850d13dec919ebd0681d1cf7d4bc8d3787ee215340c634b39"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/conv.h"
+          },
+          "hashes": {
+            "sha-256": "6607025b34c279563a77a3bb19fcf841bf44f02edd3e8db9af236f27a14c11e8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/numpy.h"
+          },
+          "hashes": {
+            "sha-256": "ca94e8e6d683a251e66cbd2ce5469dca1464321b51d98d5231d49b49b111c9f2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/subgraph.h"
+          },
+          "hashes": {
+            "sha-256": "8d52eb893b456eb00f1e5b72bb09404f7c19871c67e6b47f182d13d8e4bb9e2c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/anf.h"
+          },
+          "hashes": {
+            "sha-256": "bff906d00c1989a1710fde34c35f1f8783f7cb2eafd7bd5fc17a1467cb4f59db"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/bfsdfs.h"
+          },
+          "hashes": {
+            "sha-256": "adb0e3a66cdf1eb0d54dcfc340d8c9fc95141d63910df29aeb4040605a1c2c6c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/cncom.h"
+          },
+          "hashes": {
+            "sha-256": "ddad69e92c149b0b805e3f670ab4f21962ef5b03e0a3fd4335bb8968fe3adba6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/kcore.h"
+          },
+          "hashes": {
+            "sha-256": "5cf330d75136bede3b0e552b66d603e9f67f3452a53a9012d1f7839adc131c35"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/alg.h"
+          },
+          "hashes": {
+            "sha-256": "7f4a32b93a4c5bb0063a8dda62e346869748ed58e2372ab3c903fbb7685e8032"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/triad.h"
+          },
+          "hashes": {
+            "sha-256": "a6f5e560c3b858af85b8c8e072a23746bff1031b368b8c7ad261add1fb844c32"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/gsvd.h"
+          },
+          "hashes": {
+            "sha-256": "413dc01233550cec89bb195ef885d2faa93dbf71c038d1756cf7a79dce4ff306"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/gstat.h"
+          },
+          "hashes": {
+            "sha-256": "dbcad5f496c34c8f305dade56ad3931b6d06ca0ea63e05cd01a7e53a23f11ce5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/centr.h"
+          },
+          "hashes": {
+            "sha-256": "6920f5c5a4ea573479007bed191a52641a8e9e0710ededee7309057d59c7903f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/cmty.h"
+          },
+          "hashes": {
+            "sha-256": "0dd9d6294c309ede43caba8bbb761d65bf7a583de0900ce11be87abfd393bb54"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/flow.h"
+          },
+          "hashes": {
+            "sha-256": "3979a0aedab932769f3aecd8cef283bb41042d7b1e02c74e57ccf6557e6ff757"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/coreper.h"
+          },
+          "hashes": {
+            "sha-256": "00e1ee3567b585dd82d2fe7457c749350737d726c01275a958a392b8ffb96967"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/randwalk.h"
+          },
+          "hashes": {
+            "sha-256": "d45602c69e19890ae281b9357a9f5772bdc02dbe5b2c1deb2f9d5676043df8e7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/priorityqueue.h"
+          },
+          "hashes": {
+            "sha-256": "400f7f8bccec40c21f76a656bed17d21fe4fc585767e705a2d6f850af1c0e4d8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/casc.h"
+          },
+          "hashes": {
+            "sha-256": "a95778220d0c395ef82c17e60e969b3bdb58001ab5cd0a954e6d2d05c7cc4117"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/sim.h"
+          },
+          "hashes": {
+            "sha-256": "0bb96090d9e5b7f3081d4374feeb3a878c7b0b76ca591e435ed7ebfb76354b5c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/ggen.h"
+          },
+          "hashes": {
+            "sha-256": "469961cfcc55a3815a8e2a55d0a7da7987d81f934830fbe3881e17dac4dcdbe6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/ff.h"
+          },
+          "hashes": {
+            "sha-256": "fd5d5e9258b3319508b3ad292de01ee2f9345bbf724e4810e33dd9273503da29"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/gio.h"
+          },
+          "hashes": {
+            "sha-256": "f9719130dcb9bdb8106127f766695a7080d053260249a0c710c61d1a5e01256d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/gviz.h"
+          },
+          "hashes": {
+            "sha-256": "01b008396a11bade9a5d91264c8aa40140187c69ebeacbe2b30f1cddbdbbada7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/ghash.h"
+          },
+          "hashes": {
+            "sha-256": "bd3e24117b344d52a0e7794d9573282c86451f3f80de7b58a8a3b562f0bc9498"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/statplot.h"
+          },
+          "hashes": {
+            "sha-256": "b9f958c86acb1ad1ea6343dd66ddc7623510e704624efb98ab376d60cd19ba69"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/snap.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "4cf5542ea1831a300ee6811e45e24c23ce3b7b32431354507414524125b273b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/base.cpp"
+          },
+          "hashes": {
+            "sha-256": "1c5967d1df8dec92121f4fc78c60c112001fc2ed93cfe5036a70810c3776202f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/stdafx.h"
+          },
+          "hashes": {
+            "sha-256": "1384c859cdba915775a8608b37550cff20e0f18e629964cf30c6064547707a10"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/bd.cpp"
+          },
+          "hashes": {
+            "sha-256": "9dffe9afe644fe2abd7161119aaef5877ce97246fbb5458a160d20f24a070fd7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/fl.cpp"
+          },
+          "hashes": {
+            "sha-256": "51568d82a33e95a7cd1ac25b2c5daeb60a2902424f96a9cceb8f69149780a663"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/dt.cpp"
+          },
+          "hashes": {
+            "sha-256": "01b54d677c26d3c32ab8893f84ea8d08764f9604c1504c28d40017d741b984c8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/ut.cpp"
+          },
+          "hashes": {
+            "sha-256": "0e9d7b36aa1007253237ee311c1e327e4e567bb5576f835ce3e915d0c54460c3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/hash.cpp"
+          },
+          "hashes": {
+            "sha-256": "11c44613a3c83ec5effb7692179a5d210f786d499ce289d46db3e056e6afffd4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/unicode.cpp"
+          },
+          "hashes": {
+            "sha-256": "85f0ad1400f90f3d869cea42dafb30fb1e373bdb6548602debbc9c870032797a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/unicodestring.cpp"
+          },
+          "hashes": {
+            "sha-256": "c797d6a1e9335fb9fb41259dc8d6e810d4a91ffa87c9d9618748b8e5a398c211"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/tm.cpp"
+          },
+          "hashes": {
+            "sha-256": "ba977c3898c4490857af2ad169603d6c38f1ae7223764dd9cf2bfdf082d210b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/os.cpp"
+          },
+          "hashes": {
+            "sha-256": "3278962c2af3db7075bf5153ec0951097f1ce181f2c2417769a7f35731e95b41"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/bits.cpp"
+          },
+          "hashes": {
+            "sha-256": "9b50415a312b58dfe36b00e06960ccf59718d339e99e72fc45cb13f9269c19dc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/env.cpp"
+          },
+          "hashes": {
+            "sha-256": "8a8f0b19b82a13fd8b54b13d25467a1716fd2aabf24deb1bbbfa8e1f84f20b31"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/wch.cpp"
+          },
+          "hashes": {
+            "sha-256": "18b39b16c4d12b8432a13552c3ea8024832e3fb41208831a8e80c1ee9bda28db"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/xfl.cpp"
+          },
+          "hashes": {
+            "sha-256": "ab2aea482d7282af1af981717ed9bd3aa490d2a139ba66fb9b4da77c19bc60e0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/xmath.cpp"
+          },
+          "hashes": {
+            "sha-256": "cc522206473f7155d18c0639c8aa04f0d25bba7b168500131d34d5a6a9ea307d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/blobbs.cpp"
+          },
+          "hashes": {
+            "sha-256": "4a754bccb1c5824e8764594b8ed9816e9a2684f10f93a6e7d39c4ca3aeb74f22"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/lx.cpp"
+          },
+          "hashes": {
+            "sha-256": "6703a78f6ef3de11ad5d1568235a7f053d42f7644c8415342e3b4a69cee40b26"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/url.cpp"
+          },
+          "hashes": {
+            "sha-256": "8b84af3c86d61e622c4bb7d3b3b9d9a157576f9a01e80e400896b6eb2a1eada1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/http.cpp"
+          },
+          "hashes": {
+            "sha-256": "78282dbe32c6746aae40b5325f5f4520196875ca6888e3913bb7adaf015c27aa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/html.cpp"
+          },
+          "hashes": {
+            "sha-256": "a9f6c4e68c855e50b01cdb6a13f0468233b9335c45163a9945f73cc45407e5dd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/md5.cpp"
+          },
+          "hashes": {
+            "sha-256": "2839e7ca8c91d7400605fc821b8c6c290e88369580ddf6b6b2f1a5ee67644f16"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/ss.cpp"
+          },
+          "hashes": {
+            "sha-256": "0f58f724727f09a5a6e4445aacbf0e5fd21213116443b6b30b692c3698820da2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/ssmp.cpp"
+          },
+          "hashes": {
+            "sha-256": "004e8e229467e156e3849002ecb722975620466720620e110647fc527efab28e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/xml.cpp"
+          },
+          "hashes": {
+            "sha-256": "9e32927dfef189d6e2d2f747df9810138fda35b09888d31b9acfe6383ded7d06"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/json.cpp"
+          },
+          "hashes": {
+            "sha-256": "84492519a0dab7757cd6f0be5a3767fabb3e904a5c949118ece3df050852bf54"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/zipfl.cpp"
+          },
+          "hashes": {
+            "sha-256": "b3f0e326e3a1a1deec088937d57bea67d872b66ae553d0493d46746aed619c33"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/gnuplot.cpp"
+          },
+          "hashes": {
+            "sha-256": "470e79acb6edcf4837ec71be6d8c481aaac3f5107bf57a08ba9ba51db8df9d32"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/glib-core/linalg.cpp"
+          },
+          "hashes": {
+            "sha-256": "3624a090168d773ed762acf07fd9994a55a93db6e8b9f808f7a14ce02115733f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/gbase.cpp"
+          },
+          "hashes": {
+            "sha-256": "5befd388d93baa6ebdd41885a79016d9207abc706da9076aeb6f04d9c9889161"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/util.cpp"
+          },
+          "hashes": {
+            "sha-256": "9295e5f92997e6e2c1973828455c183943e24beae7275e9185ab0443048749b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/attr.cpp"
+          },
+          "hashes": {
+            "sha-256": "7cb016c694ae927181400fe5ceb88213e149112f63157c9d735917184e734a71"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/graph.cpp"
+          },
+          "hashes": {
+            "sha-256": "96d1aedc38910740b0077cb185f39eca43c8094fdcedac3552dff2fbf9f46356"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/graphmp.cpp"
+          },
+          "hashes": {
+            "sha-256": "23108ecd685f1f4fb0370b26ef60f76234ccf33b374754b619ff388487f86bd5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/network.cpp"
+          },
+          "hashes": {
+            "sha-256": "e8dc0f903577458e282102135e59a5765db994cc72a8691ec47726bea008725d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/networkmp.cpp"
+          },
+          "hashes": {
+            "sha-256": "69963535c7535cf7ad17cccd068119d73078e413d6d5e116bf8946ceded1da7a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/timenet.cpp"
+          },
+          "hashes": {
+            "sha-256": "89d3d7f91d2b829cb7fdbc561da56c09d77343f8b1994c377577b4b075679b91"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/mmnet.cpp"
+          },
+          "hashes": {
+            "sha-256": "6c9ad6d592ff9c7cd08b1d9ac13f973d99ab1da3741992c66ecf711f303d39da"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/table.cpp"
+          },
+          "hashes": {
+            "sha-256": "735337f3c6f95e89fa3cd6d4cb905371d764fbb4cb1c6f0ba18a992da451d566"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/conv.cpp"
+          },
+          "hashes": {
+            "sha-256": "5a3ec984f973f4d8a0ede10009532131915dc83dc042a1f9af1155925f4ee135"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/numpy.cpp"
+          },
+          "hashes": {
+            "sha-256": "ddb94147377127c2fd061464ac871010b12e51e3b4910b643df20c80219f2ff8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/subgraph.cpp"
+          },
+          "hashes": {
+            "sha-256": "fb03ed8bcab84b2eb9ae5bad019ae538a96e5c92c3a44bd413ab8043e234d4f4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/anf.cpp"
+          },
+          "hashes": {
+            "sha-256": "f186beb71ac545426599e92d42a494d49a19a04e27fd5add1ef59f61a24221ec"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/cncom.cpp"
+          },
+          "hashes": {
+            "sha-256": "1b5f55da5cd8ad5843b340ba4694639480192fe909cb9bfe086a7b7e27b1aeba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/alg.cpp"
+          },
+          "hashes": {
+            "sha-256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/gsvd.cpp"
+          },
+          "hashes": {
+            "sha-256": "6a7d1ecf4beabaf6b571d06bc5d3d20b81a6cef6d2de6b9844be8b9216ecc1e3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/gstat.cpp"
+          },
+          "hashes": {
+            "sha-256": "89af2851474db30c6e03c5b13fcde6f91b77859f3a40bc981a7398dffce74b23"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/centr.cpp"
+          },
+          "hashes": {
+            "sha-256": "b73ad36988b5d49d0ec18740046d667bd173a99e06e65585bb8ddce4a67cf470"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/cmty.cpp"
+          },
+          "hashes": {
+            "sha-256": "c861e80f0161f539e99b1ceab30d5c935e5057a4531b90edee9a82090388afe3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/flow.cpp"
+          },
+          "hashes": {
+            "sha-256": "b5eb9577cdd8d3de6f4498bbda48f6065772fae4c7a3e2f991008c5129de016b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/coreper.cpp"
+          },
+          "hashes": {
+            "sha-256": "686226e906a2d3c33c26348a27864fdfa3bd79e6a6766bf2203efd2a153e7eb8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/triad.cpp"
+          },
+          "hashes": {
+            "sha-256": "3cc0c96a769b9b1d2d049fb46e1a8fa120e531234b5ad01b96c597bcc02241e3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/casc.cpp"
+          },
+          "hashes": {
+            "sha-256": "ef00be6144f3ae4ec049962b7e7d57dfaa4b584238b9c61b3b22cb71221fac15"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/sim.cpp"
+          },
+          "hashes": {
+            "sha-256": "96770e1efa5ee67fa4a826659ef5163d3299fda9c3abbbc0df58d9d7cc3f885e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/ggen.cpp"
+          },
+          "hashes": {
+            "sha-256": "84b684292094d768314afad10cd5ab2d38f45ecf940e1823787846117ade7760"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/ff.cpp"
+          },
+          "hashes": {
+            "sha-256": "5ea16d127824f91a0f7c5993aec3ba21250a7a13bf48393ed4427f4f9079f193"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/gviz.cpp"
+          },
+          "hashes": {
+            "sha-256": "141d5efc9aed3f31cffe88536c08056bec450242d9cbe47d58e7ec5d831e5c91"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/ghash.cpp"
+          },
+          "hashes": {
+            "sha-256": "807169be4d898c7ba400c6a6c2b16a902be0342f6aa5cac44fb0bbcea426d91f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/statplot.cpp"
+          },
+          "hashes": {
+            "sha-256": "a577dd5638ace160c0abe022a01bff429e467564c6f7d801273f6570a8a7c188"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/snap-6.0/snap-core/gio.cpp"
+          },
+          "hashes": {
+            "sha-256": "7268893472c96692b2ce6c86493e8143d5ca8935938b8d9156778d71ddce3349"
+          }
+        }
+      ]
+    }
+  ]
+}
