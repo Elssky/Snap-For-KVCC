@@ -169,7 +169,9 @@ public:
   bool HasFlag(const TGraphFlag& Flag) const;
   TUNGraph& operator = (const TUNGraph& Graph) {
     if (this!=&Graph) { MxNId=Graph.MxNId; NEdges=Graph.NEdges; NodeH=Graph.NodeH; } return *this; }
-  
+  bool operator < (const TUNGraph& Graph) {
+      return Graph.GetNodes() != this->GetNodes() ? this->GetNodes() < Graph.GetNodes() : this->GetEdges() < Graph.GetEdges();
+  }
   /// Returns the number of nodes in the graph.
   int GetNodes() const { return NodeH.Len(); }
   /// Adds a node of ID NId to the graph. ##TUNGraph::AddNode

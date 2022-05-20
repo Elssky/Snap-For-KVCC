@@ -489,7 +489,6 @@ public:
   bool operator==(const TPt& Pt) const {return *Addr==*Pt.Addr;}
   bool operator!=(const TPt& Pt) const {return *Addr!=*Pt.Addr;}
   bool operator<(const TPt& Pt) const {return *Addr<*Pt.Addr;}
-
   TRec* operator->() const {Assert(Addr!=NULL); return Addr;}
   TRec& operator*() const {Assert(Addr!=NULL); return *Addr;}
   TRec& operator[](const int& RecN) const {
