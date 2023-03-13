@@ -2,6 +2,7 @@
 #define Snap_Cliques
 
 #include "Snap.h"
+#include <omp.h>
 
 /////////////////////////////////////////////////
 // Clique Percolation Method for Overlapping community detection
@@ -19,7 +20,7 @@ private:
 	int MaxNbrsInCANDNodeId(const THashSet<TInt>& SUBG, const THashSet<TInt>& CAND) const;
 private:
 	// maximal = true, 计算maximal clique， maximal = false 计算指定size大小的clique
-	void Expand(const THashSet<TInt>& SUBG, THashSet<TInt>& CAND, bool maximal = true, int leval = 0);
+	void Expand(TIntV last_R, const THashSet<TInt>& SUBG, THashSet<TInt>& CAND, bool maximal = true, int leval = 0);
 public:
 	static void GetRelativeComplement(const THashSet<TInt>& A, const THashSet<TInt>& B, THashSet<TInt>& Complement);
 	static void GetIntersection(const THashSet<TInt>& A, const THashSet<TInt>& B, THashSet<TInt>& C);
@@ -33,13 +34,19 @@ public:
 	//Bron-Kerbosch 算法 https://oi-wiki.org/graph/max-clique/ https://www.jianshu.com/p/437bd6936dad
 	void GetMaximalCliques(const PUNGraph& G, int MinMaxCliqueSize, TVec<TIntV>& MaxCliques);
 
+	void BronKerbosch2(THashSet<TInt> R, THashSet<TInt> P, THashSet<TInt> X);
+
+	void MyGetMaximalCliques(const PUNGraph& G, int MinMaxCliqueSize, TVec<TIntV>& MaxCliques);
+
 	//void GetMaximalCliquesWithCand(const PUNGraph& G, int MinMaxCliqueSize, TVec<TIntV>& MaxCliques, TIntH CandMaintain);
 
 	void GetCliques(const PUNGraph& G, int CliqueSize, TVec<TIntV>& Cliques);
 	/// Enumerate maximal cliques of the network on more than MinMaxCliqueSize nodes
 	static void GetMaxCliques(const PUNGraph& G, int MinMaxCliqueSize, TVec<TIntV>& MaxCliques);
 	/// Enumerate maximal cliques of the network on more than MinMaxCliqueSize nodes and label which node is seleted in CandMaintain
+
 	//static void GetMaxCliquesWithCand(const PUNGraph& G, int MinMaxCliqueSize, TVec<TIntV>& MaxCliques, TIntH CandMaintain);
+
 	/// Clique Percolation method communities
 	static void GetCPMCommunities(const PUNGraph& G, int MinMaxCliqueSize, TVec<TIntV>& Communities);
 	/// Enumerate  cliques of the network which size of CliqueSize nodes

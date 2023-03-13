@@ -61,3 +61,4 @@ tutorials/*.dSYM
 benchmarking/*.dat
 
 .vs/
+examples

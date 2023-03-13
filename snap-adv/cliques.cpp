@@ -73,21 +73,30 @@ int TCliqueOverlap::MaxNbrsInCANDNodeId(const THashSet<TInt>& SUBG, const THashS
 	return id;
 }
 
-void TCliqueOverlap::Expand(const THashSet<TInt>& SUBG, THashSet<TInt>& CAND, bool maximal, int level) {
+void TCliqueOverlap::Expand(TIntV last_R, const THashSet<TInt>& SUBG, THashSet<TInt>& CAND, bool maximal, int level) {
+
+	/*THashSet<TInt> CAND = CAND;*/
 	if (maximal == false) {
 		//printf("m_Q.Len : %d\n", m_Q.Len());
-		if (m_Q.Len() == m_CliqueSize) {
+		if (last_R.Len() == m_CliqueSize) {
 			//printf("%d", 1);
-			m_Q.Pack(); m_Cliques->Add(m_Q);
+			 m_Cliques->Add(last_R);
 			return;
 		}
 
 	}
 
 	if (SUBG.Len() == 0) {
+		
 		if (maximal == true) {
-			if (m_Q.Len() >= m_minMaxCliqueSize) {
-				m_Q.Pack(); m_maxCliques->Add(m_Q);
+			if (last_R.Len() >= m_minMaxCliqueSize) {
+#pragma omp critical
+				 m_maxCliques->Add(last_R);
+				/*for (TIntV::TIter TI = m_Q.BegI(); TI < m_Q.EndI(); TI++)
+				{
+					std::cout << *TI << " ";
+				}
+				std::cout << std::endl;*/
 			}
 		}
 		return;
@@ -103,33 +112,66 @@ void TCliqueOverlap::Expand(const THashSet<TInt>& SUBG, THashSet<TInt>& CAND, bo
 	//Get relative complement of nbrsU in CAND
 	THashSet<TInt> EXT;
 	GetRelativeComplement(CAND, nbrsU, EXT);
-	while (EXT.Len() != 0) {
-		//printf("EXT.Len: %d\n", EXT.Len());
-		int q = GetNodeIdWithMaxDeg(EXT);
-		//
-		m_Q.Add(q);
-		//printf("level: %d\n", level);
-		//
+
+#pragma omp parallel for 
+	for (int i = 0; i < EXT.Len(); i++) {
+
+	/*}
+	for (THashSet<TInt>::TIter TI = EXT.BegI(); TI < EXT.EndI(); TI++) {*/
+		int q = EXT.GetKey(i);
+		/*int q = TI.GetKey();*/
+		TIntV R = last_R;
+
+
+		R.Add(q);
+		
 		THashSet<TInt> nbrsQ;
 		GetNbrs(q, nbrsQ);
-		//
+
 		THashSet<TInt> SUBGq;
 		GetIntersection(SUBG, nbrsQ, SUBGq);
-		//
+
 		THashSet<TInt> CANDq;
 		GetIntersection(CAND, nbrsQ, CANDq);
-		//
-		Expand(SUBGq, CANDq, maximal, level + 1);
-		//
+
+		Expand(R, SUBGq, CANDq, maximal, level + 1);
+
+#pragma omp critical
+
 		CAND.DelKey(q);
-		m_Q.DelLast();
-		//
-		EXT.Clr();
-		GetRelativeComplement(CAND, nbrsU, EXT);
+		
+		/*m_Q.DelLast();*/
+
 	}
+	
+	//while (EXT.Len() != 0) {
+	//	//printf("EXT.Len: %d\n", EXT.Len());
+	//	int q = GetNodeIdWithMaxDeg(EXT);
+	//	//
+	//	m_Q.Add(q);
+	//	//printf("level: %d\n", level);
+	//	//
+	//	THashSet<TInt> nbrsQ;
+	//	GetNbrs(q, nbrsQ);
+	//	//
+	//	THashSet<TInt> SUBGq;
+	//	GetIntersection(SUBG, nbrsQ, SUBGq);
+	//	//
+	//	THashSet<TInt> CANDq;
+	//	GetIntersection(CAND, nbrsQ, CANDq);
+	//	//
+	//	Expand(SUBGq, CANDq, maximal, level + 1);
+	//	//
+	//	CAND.DelKey(q);
+	//	m_Q.DelLast();
+	//	//
+	//	EXT.Clr();
+	//	GetRelativeComplement(CAND, nbrsU, EXT);
+	//}
 }
 
 void TCliqueOverlap::GetMaximalCliques(const PUNGraph& G, int MinMaxCliqueSize, TVec<TIntV>& MaxCliques) {
+
 	if (G->GetNodes() == 0) return;
 	//
 	m_G = G;
@@ -145,7 +187,43 @@ void TCliqueOverlap::GetMaximalCliques(const PUNGraph& G, int MinMaxCliqueSize, 
 		CAND.AddKey(nId);
 	}
 	//
-	Expand(SUBG, CAND);
+	Expand(m_Q, SUBG, CAND);
+
+}
+
+void TCliqueOverlap::BronKerbosch2(THashSet<TInt>R, THashSet<TInt>P, THashSet<TInt>X) {
+	if (P.Empty() && X.Empty()) {
+		if (m_Q.Len() >= m_minMaxCliqueSize) {
+			m_Q.Pack(); m_maxCliques->Add(m_Q);
+		}
+	}
+	/*int u = MaxNbrsInCANDNodeId(SUBG, CAND);*/
+}
+
+void TCliqueOverlap::MyGetMaximalCliques(const PUNGraph& G, int MinMaxCliqueSize, TVec<TIntV>& MaxCliques) {
+	if (G->GetNodes() == 0) return;
+	//
+	m_G = G;
+	m_minMaxCliqueSize = MinMaxCliqueSize;
+	m_maxCliques = &MaxCliques;
+	m_Q.Clr();
+	//
+
+	THashSet<TInt> R, P, X;
+
+	for (TUNGraph::TNodeI NI = m_G->BegNI(); NI < m_G->EndNI(); NI++) {
+		TInt nId = NI.GetId();
+		P.AddKey(nId);
+	}
+
+	BronKerbosch2(R, P, X);
+
+
+
+	/*for (each vertex in G) {
+
+	}*/
+	//
 }
 
 //void TCliqueOverlap::GetMaximalCliquesWithCand(const PUNGraph& G, int MinMaxCliqueSize, TVec<TIntV>& MaxCliques, TIntH CandMaintain) {
@@ -184,7 +262,7 @@ void TCliqueOverlap::GetCliques(const PUNGraph& G, int CliqueSize, TVec<TIntV>& 
 		CAND.AddKey(nId);
 	}
 	//
-	Expand(SUBG, CAND, false);
+	Expand(m_Q, SUBG, CAND, false);
 }
 
 void TCliqueOverlap::CalculateOverlapMtx(const TVec<TIntV>& MaxCliques, int MinNodeOverlap, TVec<TIntV>& OverlapMtx) {
@@ -325,83 +403,83 @@ void TCliqueOverlap::GetCPMCommunities(const PUNGraph& G, int MinMaxCliqueSize, 
 
 void TCliqueOverlap::GetCliquesSizeof(const PUNGraph& G, int CliqueSize, TVec<TIntV>& Cliques) {
 
-	////时间复杂度O(n^k)
-	//TVec<TIntV> cliques;
-	//TIntV tmpV;
-	////2-cliques
-	//for (TUNGraph::TEdgeI EI = G->BegEI(); EI < G->EndEI(); EI++) {
-	//	//std::cout << EI.GetSrcNId() <<" " << EI.GetDstNId() << std::endl;
-	//	tmpV.Clr();
-	//	tmpV.Add(EI.GetSrcNId());
-	//	tmpV.Add(EI.GetDstNId());
-	//	cliques.Add(tmpV);
-	//	
-	//}
-	//int k = 2;
-	//if (CliqueSize == 2) {
-	//	Cliques = cliques;
-	//	return;
-	//}
-
-	//while (!cliques.Empty()) {  //O(k)
-
-	//	//yield k,cliques
-	//	
-	//	//merge k-cliques into (k+1)-cliques
-
-	//	TVec<TIntV> cliques_1;
-
-	//	k += 1;
-
-	//	//O(n^2)
-	//	for (TVec<TIntV>::TIter TI1 = cliques.BegI(); TI1 < cliques.EndI(); TI1++) {
-	//		for (TVec<TIntV>::TIter TI2 = TI1; TI2 < cliques.EndI(); TI2++) {
-	//			if (TI1 == TI2) continue;
-	//			TIntV intersection, difference;
-	//			//找交集 O(TI1*TI2)  怎么优化？
-	//			TIntH tmp;
-	//			TIntV cq;
-	//			for (TIntV::TIter TI = TI1->BegI(); TI < TI1->EndI(); TI++) {
-	//				tmp.AddDat(*TI, 1);
-	//			}
-	//			for (TIntV::TIter TI = TI2->BegI(); TI < TI2->EndI(); TI++) {
-	//				//判断是否存在Key
-	//				if (tmp.IsKey(*TI)) {
-	//					tmp.GetDat(*TI)++;
-	//				}
-	//				else {
-	//					tmp.AddDat(*TI, 1);
-	//				}					
-	//			}
-	//			for (TIntH::TIter HI = tmp.BegI(); HI < tmp.EndI(); HI++) {
-	//				if (HI.GetDat() == 1) {
-	//					difference.Add(HI.GetKey());
-	//				}						
-	//			}
-
-	//			if (difference.Len() == 2 && G->IsEdge(difference[0], difference[1])) {
-	//				cq.AddV(*TI1);
-	//				cq.AddVMerged(difference);			
-	//				cliques_1.Add(cq);
-	//			}
-	//		}
-	//	}
-	//	
-	//	//TODO:
-
-	//	cliques = cliques_1;
-	//	cliques.Merge();
-
-	//	if (k == CliqueSize) {
-	//		Cliques = cliques;
-	//		return;
-	//	}
-	//	
-	//}
-	//printf("Do Not Exist k-cliques!!!\n");
-	//return;
+	//时间复杂度O(n^k)
+	TVec<TIntV> cliques;
+	TIntV tmpV;
+	//2-cliques
+	for (TUNGraph::TEdgeI EI = G->BegEI(); EI < G->EndEI(); EI++) {
+		//std::cout << EI.GetSrcNId() <<" " << EI.GetDstNId() << std::endl;
+		tmpV.Clr();
+		tmpV.Add(EI.GetSrcNId());
+		tmpV.Add(EI.GetDstNId());
+		cliques.Add(tmpV);
 		
-	TCliqueOverlap CO;
+	}
+	int k = 2;
+	if (CliqueSize == 2) {
+		Cliques = cliques;
+		return;
+	}
+
+	while (!cliques.Empty()) {  //O(k)
+
+		//yield k,cliques
+		
+		//merge k-cliques into (k+1)-cliques
+
+		TVec<TIntV> cliques_1;
+
+		k += 1;
+
+		//O(n^2)
+		for (TVec<TIntV>::TIter TI1 = cliques.BegI(); TI1 < cliques.EndI(); TI1++) {
+			for (TVec<TIntV>::TIter TI2 = TI1; TI2 < cliques.EndI(); TI2++) {
+				if (TI1 == TI2) continue;
+				TIntV intersection, difference;
+				//找交集 O(TI1*TI2)  怎么优化？
+				TIntH tmp;
+				TIntV cq;
+				for (TIntV::TIter TI = TI1->BegI(); TI < TI1->EndI(); TI++) {
+					tmp.AddDat(*TI, 1);
+				}
+				for (TIntV::TIter TI = TI2->BegI(); TI < TI2->EndI(); TI++) {
+					//判断是否存在Key
+					if (tmp.IsKey(*TI)) {
+						tmp.GetDat(*TI)++;
+					}
+					else {
+						tmp.AddDat(*TI, 1);
+					}					
+				}
+				for (TIntH::TIter HI = tmp.BegI(); HI < tmp.EndI(); HI++) {
+					if (HI.GetDat() == 1) {
+						difference.Add(HI.GetKey());
+					}						
+				}
+
+				if (difference.Len() == 2 && G->IsEdge(difference[0], difference[1])) {
+					cq.AddV(*TI1);
+					cq.AddVMerged(difference);			
+					cliques_1.Add(cq);
+				}
+			}
+		}
+		
+		//TODO:
+
+		cliques = cliques_1;
+		cliques.Merge();
+
+		if (k == CliqueSize) {
+			Cliques = cliques;
+			return;
+		}
+		
+	}
+	printf("Do Not Exist %d-cliques!!!\n", CliqueSize);
+	return;
+		
+	/*TCliqueOverlap CO;
 	Cliques.Clr(false);
-	CO.GetCliques(G, CliqueSize, Cliques);
+	CO.GetCliques(G, CliqueSize, Cliques);*/
 }
