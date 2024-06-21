@@ -1,3 +1,4 @@
+#include <unordered_map>
 /////////////////////////////////////////////////
 // Loading and saving graphs from/to various file formats.
 namespace TSnap {
@@ -217,6 +218,40 @@ void SaveEdgeList(const PGraph& Graph, const TStr& OutFNm, const TStr& Desc) {
   for (typename PGraph::TObj::TEdgeI ei = Graph->BegEI(); ei < Graph->EndEI(); ei++) {
     fprintf(F, "%d\t%d\n", ei.GetSrcNId(), ei.GetDstNId());
   }
+  fclose(F);
+}
+
+template <class PGraph>
+void My_SaveEdgeList(const PGraph& Graph, const TStr& OutFNm, const TStr& Desc) {
+  // 创建文件指针
+  FILE *F = fopen(OutFNm.CStr(), "wt");
+
+  // 哈希表，用于存储节点的重新编号
+  std::unordered_map<int, int> nodeIdMap;
+  int nextId = 0;
+  fprintf(F, "%d\t%d\n", Graph->GetNodes(), Graph->GetEdges());
+
+  // 遍历图的边
+  for (typename PGraph::TObj::TEdgeI ei = Graph->BegEI(); ei < Graph->EndEI(); ei++) {
+    int srcNId = ei.GetSrcNId();
+    int dstNId = ei.GetDstNId();
+
+    // 如果源节点没有被重新编号，则为其分配新的编号
+    if (nodeIdMap.find(srcNId) == nodeIdMap.end()) {
+      nodeIdMap[srcNId] = nextId++;
+    }
+
+    // 如果目标节点没有被重新编号，则为其分配新的编号
+    if (nodeIdMap.find(dstNId) == nodeIdMap.end()) {
+      nodeIdMap[dstNId] = nextId++;
+    }
+
+    // 输出重新编号后的节点对
+    fprintf(F, "%d\t%d\n", nodeIdMap[srcNId], nodeIdMap[dstNId]);
+  }
+
+
+  // 关闭文件
   fclose(F);
 }
 

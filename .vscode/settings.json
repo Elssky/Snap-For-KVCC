@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.json": "jsonc",
+        "*.cu": "cuda-cpp",
+        "random": "cpp"
+    }
+}
